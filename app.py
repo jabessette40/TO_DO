@@ -8,6 +8,13 @@ def view_list(task_list):
     '''Print TASK_LIST to stdout'''
     return print(task_list)
 
+def del_task(task_list):
+    '''Delete a task from TASK_LIST'''
+    index = 0
+    for task in task_list:
+        print(str(index) + " " + task)
+        index += 1
+
 
 def main():
 
@@ -26,6 +33,8 @@ def main():
                 view_list(todo_list )
             else:
                 print("Todo list is empty! Add a task!")
+        elif event in ("D", "d"):
+            del_task(todo_list)
         elif event in ("E", "e"):
             continue_flag = False
 if __name__ == "__main__":
