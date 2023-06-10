@@ -15,18 +15,18 @@ def main():
     todo_list = []
 
     while continue_flag:  # Event loop
-        print("ToDo List: V)iew List. A)dd Task.  D)elete Task.  E)xit.\n")
+        print("\nToDo List: V)iew List. A)dd Task.  D)elete Task.  E)xit.\n")
         event = input("What would you like to do? ")
 
-        if event == "A" or "a":
+        if event in ("A", "a"):
             task = input("Enter task: ")
             add_task(todo_list, task)
-        elif event == "V" or "v":
+        elif event in ("V", "v"):
             if todo_list:
-                view_list(todo_list)
+                view_list(todo_list )
             else:
                 print("Todo list is empty! Add a task!")
-        elif event == "E" or "e":
+        elif event in ("E", "e"):
             continue_flag = False
 if __name__ == "__main__":
     main()
