@@ -1,1 +1,0 @@
-# Simple ToDo App made in Python.
