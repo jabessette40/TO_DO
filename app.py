@@ -1,6 +1,5 @@
 # Simple ToDo App made in Python.
 
-# To Do - Prevent Index Out Of Range error while deleting an item. 
 
 def add_task(task_list, task):
     '''Add TASK to TASK_LIST'''
@@ -44,7 +43,11 @@ def main():
             else:
                 print("Todo list is empty! Add a task!")
         elif event in ("D", "d"):
-            del todo_list[del_task(todo_list)] # I needed to make this clearer. 
+            choice = del_task(todo_list)
+            if choice in range(0, len(todo_list)):
+                del todo_list[choice]
+            else:
+                print("Error: Task not in list!")
         elif event in ("E", "e"):
             continue_flag = False
 
