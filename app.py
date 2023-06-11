@@ -23,7 +23,8 @@ def del_task(task_list):
     choice = input("Delete which task? ")
 
     return int(choice)
-
+def draw_gui():
+    print("ToDo List: V)iew List. A)dd Task.  D)elete Task.  E)xit.\n")
 
 def main():
 
@@ -31,7 +32,7 @@ def main():
     todo_list = []
 
     while continue_flag:  # Event loop
-        print("ToDo List: V)iew List. A)dd Task.  D)elete Task.  E)xit.\n")
+        draw_gui()
         event = input("What would you like to do? ")
 
         if event in ("A", "a"):
