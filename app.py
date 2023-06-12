@@ -1,8 +1,7 @@
 # Simple ToDo App made in Python.
 
-# To Do - 
-# Prevent delete function from running if the list is empty
-# If there is a space in the input, ie "A_" input is neglected. Strip whitespace.
+# To Do -
+
 # Add checklist toggle
 # Add save/load feature.
 
@@ -30,11 +29,12 @@ def del_task(task_list):
     choice = input("Delete which task? ")
 
     return int(choice)
+
 def draw_gui(border_char):
     ''' Draw the menu'''
     print() # For newline
     print("ToDo List: V)iew List. A)dd Task.  D)elete Task.  E)xit.")
-    print(border_char * 55)
+    print(border_char * 56)
     print() # For newline
 
 def main():
@@ -44,7 +44,7 @@ def main():
 
     while continue_flag:  # Event loop
         draw_gui("-")
-        event = input("What would you like to do? ")
+        event = input("What would you like to do? ").strip()
 
         if event in ("A", "a"):
             task = input("Enter task: ")
@@ -55,11 +55,14 @@ def main():
             else:
                 print("Todo list is empty! Add a task!")
         elif event in ("D", "d"):
-            choice = del_task(todo_list)
-            if choice in range(0, len(todo_list)):
-                del todo_list[choice]
+            if todo_list:
+                choice = del_task(todo_list)
+                if choice in range(0, len(todo_list)):
+                    del todo_list[choice]
+                else:
+                    print("Error: Task not in list!")
             else:
-                print("Error: Task not in list!")
+                print("\ndError: Your TO DO list is empty. Congratulations!")
         elif event in ("E", "e"):
             continue_flag = False
 
