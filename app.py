@@ -5,6 +5,7 @@
 # Add checklist toggle
 # Add save/load feature.
 
+
 def add_task(task_list, task):
     '''Add TASK to TASK_LIST'''
     return task_list.append(task)
@@ -35,7 +36,7 @@ def draw_gui(border_char):
     print("ToDo List: V)iew List. A)dd Task.  D)elete Task.  E)xit.")
     print(border_char * 56)
     print() # For newline
-
+    
 def main():
 
     continue_flag = True
