@@ -1,11 +1,5 @@
 # Simple ToDo App made in Python.
 
-# To Do -
-
-# Add checklist toggle
-# Add save/load feature.
-
-
 def add_task(task_list, task):
     '''Add TASK to TASK_LIST'''
     return task_list.append(task)
@@ -30,13 +24,14 @@ def del_task(task_list):
 
     return int(choice)
 
+
 def draw_gui(border_char):
     ''' Draw the menu'''
-    print() # For newline
+    print()  # For newline
     print("ToDo List: V)iew List. A)dd Task.  D)elete Task.  E)xit.")
     print(border_char * 56)
-    print() # For newline
-    
+    print()  # For newline
+
 def main():
 
     continue_flag = True
