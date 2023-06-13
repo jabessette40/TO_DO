@@ -10,12 +10,11 @@ def add_task(task_list, task):
     return task_list.append(task)
 
 
-def view_list(task_list, border_char):
+def view_list(task_list):
     '''Print TASK_LIST to stdout'''
     index = 0
     for task in task_list:
-        print(border_char * 25)
-        print("| " + str(index) + " | " + task)
+        print(str(index) + " " + task)
 
         index += 1
 
@@ -51,7 +50,7 @@ def main():
             add_task(todo_list, task)
         elif event in ("V", "v"):
             if todo_list:
-                view_list(todo_list, "-")
+                view_list(todo_list)
             else:
                 print("Todo list is empty! Add a task!")
         elif event in ("D", "d"):
@@ -62,7 +61,7 @@ def main():
                 else:
                     print("Error: Task not in list!")
             else:
-                print("\ndError: Your TO DO list is empty. Congratulations!")
+                print("\nError: Your TO DO list is empty. Congratulations!")
         elif event in ("E", "e"):
             continue_flag = False
 
