@@ -1,14 +1,16 @@
 def add_task(task_list, task):
     '''Add TASK to TASK_LIST'''
-    return task_list.append(task)
+    return task_list.update({task: "[ ]"})
 
 
 def view_list(task_list):
     '''Print TASK_LIST to stdout'''
-    index = 0
-    for task in task_list:
-        print(str(index) + " " + task)
+    index = 1
 
+    print("My Todo List:")
+    print("-" * 13)
+    for task in task_list:
+        print(str(index) + " " + str(task_list[task]), str(task))
         index += 1
 
 

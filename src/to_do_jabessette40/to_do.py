@@ -7,12 +7,12 @@ from to_do_mod import *
 def main():
 
     continue_flag = True
-    todo_list = []
+    todo_list = {}
 
     while continue_flag:  # Event loop
         draw_gui("-")
         event = input("What would you like to do? ").strip()
-
+        
         if event in ("A", "a"):
             task = input("Enter task: ")
             add_task(todo_list, task)
