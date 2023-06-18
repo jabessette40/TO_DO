@@ -1,5 +1,6 @@
 Project_Description.txt
 project_roadmap.txt
 package_outline.txt
+__pycache__/
 .venv/
 .vscode/
