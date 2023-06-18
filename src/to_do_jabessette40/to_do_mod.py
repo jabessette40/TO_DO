@@ -3,15 +3,8 @@ def add_task(task_list, task):
     return task_list.update({task: "[ ]"})
 
 
-def view_list(task_list):
-    '''Print TASK_LIST to stdout'''
-    index = 1
 
-    print("My Todo List:")
-    print("-" * 13)
-    for task in task_list:
-        print(str(index) + " " + str(task_list[task]), str(task))
-        index += 1
+    
 
 
 def del_task(task_list):
@@ -25,10 +18,23 @@ def del_task(task_list):
     return int(choice)
 
 
-def draw_gui(border_char):
+def draw_gui(border_char, task_list):
     ''' Draw the menu'''
-    print()  # For newline
-    print("ToDo List: V)iew List. A)dd Task.  D)elete Task.  E)xit.")
-    print(border_char * 56)
-    print()  # For newline
+    # Print The Checklist.
+    index = 1
 
+    print("\nMy Todo List:")
+    print("-" * 13)
+    
+    if task_list:
+        for task in task_list:
+            print(str(index) + " " + str(task_list[task]), str(task))
+            index += 1
+    else:
+        print("Nothing to do!\nYay!")
+        
+    # Draw the Menu
+    print("\nA)dd Task.  D)elete Task. M)ark Finished.  E)xit.")
+    print(border_char * 50)
+    
+    

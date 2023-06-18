@@ -10,17 +10,14 @@ def main():
     todo_list = {}
 
     while continue_flag:  # Event loop
-        draw_gui("-")
+        draw_gui("-", todo_list)
         event = input("What would you like to do? ").strip()
         
         if event in ("A", "a"):
             task = input("Enter task: ")
             add_task(todo_list, task)
-        elif event in ("V", "v"):
-            if todo_list:
-                view_list(todo_list)
-            else:
-                print("Todo list is empty! Add a task!")
+        elif event in ("M", "m"):
+            continue # Place Holder for check toggle.
         elif event in ("D", "d"):
             if todo_list:
                 choice = del_task(todo_list)
