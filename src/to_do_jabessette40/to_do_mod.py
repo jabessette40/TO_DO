@@ -9,13 +9,14 @@ def add_task(task_list, task):
 
 def del_task(task_list):
     '''Delete a task from TASK_LIST'''
-    index = 0
-    for task in task_list:
-        print(str(index) + " " + task)
-        index += 1
     choice = input("Delete which task? ")
+    
+    if choice in task_list.keys():
+        del task_list[choice] 
+        print(f"Deleted {choice}")
+    else:
+        print("Couldn't find task!")
 
-    return int(choice)
 
 
 def draw_gui(border_char, task_list):
@@ -36,5 +37,15 @@ def draw_gui(border_char, task_list):
     # Draw the Menu
     print("\nA)dd Task.  D)elete Task. M)ark Finished.  E)xit.")
     print(border_char * 50)
+    
+
+def mark_task(task_list):
+    ''' Marks a Task Finished.'''
+    choice = input("Which task? ")
+    
+    if choice in task_list.keys():
+        task_list[choice] = "[X]"
+    else:
+        print("Couldn't find task!")
     
     

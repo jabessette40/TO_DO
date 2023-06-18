@@ -1,8 +1,7 @@
 To Do - Project Features/Goal
 
 1. Finish base program.
-    - Add checklist toggle
-    - Add save/load feature.
+     - Add save/load feature.
 
 2. Create a Rich or Curses version.
 

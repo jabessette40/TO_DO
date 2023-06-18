@@ -9,7 +9,7 @@ def main():
     continue_flag = True
     todo_list = {}
 
-    while continue_flag:  # Event loop
+    while continue_flag:  # Event loope
         draw_gui("-", todo_list)
         event = input("What would you like to do? ").strip()
         
@@ -17,14 +17,10 @@ def main():
             task = input("Enter task: ")
             add_task(todo_list, task)
         elif event in ("M", "m"):
-            continue # Place Holder for check toggle.
+            mark_task(todo_list)
         elif event in ("D", "d"):
             if todo_list:
-                choice = del_task(todo_list)
-                if choice in range(0, len(todo_list)):
-                    del todo_list[choice]
-                else:
-                    print("Error: Task not in list!")
+                del_task(todo_list)
             else:
                 print("\nError: Your TO DO list is empty. Congratulations!")
         elif event in ("E", "e"):
