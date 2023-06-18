@@ -2,7 +2,8 @@
 
 from to_do_mod import *
 
-#test_func("Testing...")
+# test_func("Testing...")
+
 
 def main():
 
@@ -12,7 +13,7 @@ def main():
     while continue_flag:  # Event loope
         draw_gui("-", todo_list)
         event = input("What would you like to do? ").strip()
-        
+
         if event in ("A", "a"):
             task = input("Enter task: ")
             add_task(todo_list, task)
