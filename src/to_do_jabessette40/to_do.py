@@ -1,7 +1,6 @@
 # Simple ToDo App made in Python.
 
 from to_do_mod import *
-import json
 
 def main():
 
@@ -22,6 +21,11 @@ def main():
                 del_task(todo_list)
             else:
                 print("\nError: Your TO DO list is empty. Congratulations!")
+        elif event in ("S", "s"):
+            export_list(todo_list, "my_list.json")
+        elif event in ("L", "l"):
+            todo_list = import_list("my_list.json")
+    
         elif event in ("E", "e"):
             continue_flag = False
 

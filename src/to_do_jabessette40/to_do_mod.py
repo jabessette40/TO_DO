@@ -1,3 +1,5 @@
+import json 
+
 def add_task(task_list, task):
     '''Add TASK to TASK_LIST'''
     if task:
@@ -33,7 +35,7 @@ def draw_gui(border_char, task_list):
         print("Nothing to do!\nYay!")
 
     # Draw the Menu
-    print("\nA)dd Task.  D)elete Task. M)ark Finished.  E)xit.")
+    print("\nA)dd Task.  D)elete Task. M)ark Finished. S)ave. L)oad.  E)xit.")
     print(border_char * 50)
 
 
@@ -46,12 +48,24 @@ def mark_task(task_list):
     else:
         print("Couldn't find task!")
         
-def export_list(task):
+def export_list(task_list, savefile):
     '''Exports the Todo list using JSON'''
-    pass
+    if savefile:
+        with open(savefile, "w") as json_file:
+            json.dump(task_list, json_file)
+            print(f"Saving file {savefile}")
+        json_file.close()
+    else:
+        print("No file selected!")
     return
 
-def import_list(task_list):
+def import_list(load_file):
     '''Imports a Todo list using JSON'''
+    if load_file:
+        with open(load_file, 'r') as json_file:
+            data = json.load(json_file)
+    else:
+        print("No file to load.")
+
     pass
     return
