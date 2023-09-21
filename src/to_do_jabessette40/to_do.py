@@ -3,9 +3,6 @@
 from to_do_mod import *
 import json
 
-# test_func("Testing...")
-
-
 def main():
 
     continue_flag = True
