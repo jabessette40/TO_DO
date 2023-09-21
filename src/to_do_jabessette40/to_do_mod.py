@@ -45,3 +45,13 @@ def mark_task(task_list):
         task_list[choice] = "[X]"
     else:
         print("Couldn't find task!")
+        
+def export_list(task):
+    '''Exports the Todo list using JSON'''
+    pass
+    return
+
+def import_list(task_list):
+    '''Imports a Todo list using JSON'''
+    pass
+    return
