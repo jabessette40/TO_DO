@@ -36,7 +36,7 @@ def draw_gui(border_char, task_list):
 
     # Draw the Menu
     print("\nA)dd Task.  D)elete Task. M)ark Finished. S)ave. L)oad.  E)xit.")
-    print(border_char * 50)
+    print(border_char * 63)
 
 
 def mark_task(task_list):
@@ -64,8 +64,8 @@ def import_list(load_file):
     if load_file:
         with open(load_file, 'r') as json_file:
             data = json.load(json_file)
+        json_file.close()
     else:
         print("No file to load.")
 
-    pass
-    return
+    return data

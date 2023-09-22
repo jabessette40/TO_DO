@@ -2,6 +2,7 @@ Project_Description.txt
 my_list.json
 project_roadmap.txt
 package_outline.txt
+*.pyc
 __pycache__/
 __pycache__/app_header.cpython-311.pyc
 .venv/
