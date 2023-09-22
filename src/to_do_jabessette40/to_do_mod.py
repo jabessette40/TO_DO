@@ -1,4 +1,7 @@
 import json 
+from rich import print as rprint
+from rich.console import Console
+console = Console()
 
 def add_task(task_list, task):
     '''Add TASK to TASK_LIST'''
@@ -24,19 +27,21 @@ def draw_gui(border_char, task_list):
     # Print The Checklist.
     index = 1
 
-    print("\nMy Todo List:")
-    print("-" * 13)
+    #print("\nMy Todo List:")
+    console.rule("[bold blue]\nMy Todo List:[bold blue/]")
+    #print("-" * 13)
 
     if task_list:
         for task in task_list:
             print(str(index) + " " + str(task_list[task]), str(task))
             index += 1
     else:
-        print("Nothing to do!\nYay!")
+        rprint("[blue]Nothing to do! Yay![blue/]")
 
     # Draw the Menu
-    print("\nA)dd Task.  D)elete Task. M)ark Finished. S)ave. L)oad.  E)xit.")
-    print(border_char * 63)
+    rprint("[magenta]\nA)dd Task.  D)elete Task. M)ark Finished. S)ave. L)oad.  E)xit.[magenta/]")
+    console.rule()
+    #print(border_char * 63)
 
 
 def mark_task(task_list):
@@ -53,7 +58,7 @@ def export_list(task_list, savefile):
     if savefile:
         with open(savefile, "w") as json_file:
             json.dump(task_list, json_file)
-            print(f"Saving file {savefile}")
+            rprint(f"[bold yellow]Saving file {savefile}[bold yellow/]")
         json_file.close()
     else:
         print("No file selected!")
